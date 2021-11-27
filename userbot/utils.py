@@ -301,8 +301,8 @@ def errors_handler(func):
                 'date': datetime.datetime.now()
             }
 
-            text = "**EXELON HATA RAPORU**\n"
-            link = "[Exelon Destek Grubu](https://t.me/ExelonSupport)"
+            text = "**HERLOCK HATA RAPORU**\n"
+            link = "[HERLOCK Destek Grubu](https://t.me/HerlockSupport)"
             text += "İsterseniz, bunu rapor edebilirsiniz"
             text += f"- sadece bu mesajı buraya iletin {link}.\n"
             text += "Hata ve Tarih dışında hiçbir şey kaydedilmez\n"
@@ -313,7 +313,7 @@ def errors_handler(func):
             ftext += "\ngizliliğinize saygı duyuyoruz,"
             ftext += "\nburada herhangi bir gizli veri varsa"
             ftext += "\nbu hata raporu olmayabilir, kimse verilerinize ulaşamaz.\n"
-            ftext += "--------EXELON HATA GUNLUGU--------"
+            ftext += "--------HERLOCK HATA GUNLUGU--------"
             ftext += "\nTarih: " + date
             ftext += "\nGrup ID: " + str(errors.chat_id)
             ftext += "\nGönderen kişinin ID: " + str(errors.sender_id)
@@ -323,7 +323,7 @@ def errors_handler(func):
             ftext += str(traceback.format_exc())
             ftext += "\n\nHata metni:\n"
             ftext += str(sys.exc_info()[1])
-            ftext += "\n\n--------EXELON HATA GUNLUGU BITIS--------"
+            ftext += "\n\n--------HERLOCK HATA GUNLUGU BITIS--------"
 
             command = "git log --pretty=format:\"%an: %s\" -5"
 
