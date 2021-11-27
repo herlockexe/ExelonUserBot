@@ -18,7 +18,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 UPSTREAM_REPO_BRANCH = "master"
-UPSTREAM_REPO_URL = "https://github.com/BristolMyers/ExelonUserBot"
+UPSTREAM_REPO_URL = "https://github.com/herlockexe/Herlock-UserBot"
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -79,7 +79,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "`[HEROKU] `\n`Lütfen ** HEROKU_APP_NAME ** değişkenini ayarlayın!!"
-                " Exelonu güncellemek için..."
+                " Herlock güncellemek için..."
             )
             repo.__del__()
             return
@@ -89,7 +89,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n" "`Exelon dyno'yu yüklemek için geçersiz Heroku kimlik bilgileri!!`"
+                f"{txt}\n" "`Herlock dyno'yu yüklemek için geçersiz Heroku kimlik bilgileri!!`"
             )
             return repo.__del__()
         await event.edit(
@@ -163,7 +163,7 @@ async def upstream(event):
             return await event.edit(
                 f"`Maalesef {error} dizini"
                 "bir git reposu gibi görünmüyor.\n"
-                "Ancak bunu, Exelon kullanarak düzeltebiliriz."
+                "Ancak bunu, Herlock kullanarak düzeltebiliriz."
                 ".update now.`"
             )
         repo = Repo.init()
@@ -180,7 +180,7 @@ async def upstream(event):
             f"`Galiba Exelon botunu modifiye ettin ve kendi branşını kullanıyorsun ({ac_br}). "
             "Bu durum güncelleyicinin kafasını karıştırıyor "
             "Güncelleme nereden çekilecek?. "
-            "Lütfen Exelon botunu resmi repodan kullan`"
+            "Lütfen Herlock botunu resmi repodan kullan`"
         )
         return repo.__del__()
     try:
@@ -204,7 +204,7 @@ async def upstream(event):
     if conf == "" and force_update is False:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond("**Exelonu Güncellemek İçin** `.update now` **veya** `.update deploy` **Komutunu Kullanın. Ayrıntılar için** `.info updater` yazınız!")
+        return await event.respond("**Herlock Güncellemek İçin** `.update now` **veya** `.update deploy` **Komutunu Kullanın. Ayrıntılar için** `.info updater` yazınız!")
 
     if force_update:
         await event.edit(
@@ -223,6 +223,6 @@ CMD_HELP.update({"updater": "**PLUGİN İSMİ:** `updater`\
       \n**Kullanım ➥ ** Botunuzu günceller.\
       \nExelon deponuzda herhangi bir güncelleme varsa, yeniden başlatırsanız, bunlar en son konuşlandırdığınız zamana geri döner\
       \n\n**📌Komut ➥ ** `.update deploy`\
-      \n**Kullanım ➥ ** Exelonu konuşlandırın, böylece yeniden başlatsanız bile önceki sürüme geri dönmez..\
+      \n**Kullanım ➥ ** Herlock konuşlandırın, böylece yeniden başlatsanız bile önceki sürüme geri dönmez..\
       \nBu, güncelleme olmasa bile her zaman güncellemeyi tetikler"
                  })
