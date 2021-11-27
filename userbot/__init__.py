@@ -37,7 +37,7 @@ else:
 # Paper Plane Genişletilmiş Destek Çubukları
 ENV = os.environ.get("ENV", False)
 
-EXELON_ID = ["1012994299"]
+HERLOCK_ID = ["2124244679"]
 
 # Bot Günlükleri kurulumu:
 if bool(ENV):
